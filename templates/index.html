@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        function validateform() {
+            let age=document.getElementById("cust_age").value
+            let c=document.getElementById("cust_cholesterol_level").value
+            let g=document.getElementById("cust_average_glucose_level").value
+            let h=document.getElementById("cust_height").value
+            let w=document.getElementById("cust_weight").value
+            let med=document.getElementById("cust_average_medExp").value
+
+            if (age<=0){
+                alert("Enter a valid age");
+                return false;
+            }
+            if (c<=30){
+                alert("Enter a valid cholestrol level");
+                return false;
+            }
+            if (g<=0){
+                alert("Enter a valid glucose level");
+                return false;
+            }
+            if (h<=0){
+                alert("Enter a valid height ");
+                return false;
+            }
+            if (w<=30){
+                alert("Enter a valid weight ");
+                return false;
+            }
+            if (med<=0){
+                alert("Enter a valid Medical expenses");
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="/static/insure.png">
+        <h2 style="color: antiquewhite;">Health Insurance Premium Prediction</h2>
+
+
+    </div>
+    <div class="container">
+    
+
+    <form id="customerForm" method="POST" onsubmit="return validateform()" action="{{url_for('submit')}}">
+        <h2>customer Information</h2>
+
+        <!-- Demographic and Personal Information -->
+        <label for="cust_name">Customer Name:</label>
+        <input type="text" id="cust_name" name="cust_name" required>
+        <label for="cust_age">Customer Age:</label>
+        <input type="number" id="cust_age" name="cust_age" required>
+
+        <label for="cust_gender">Customer Gender:</label>
+        <select id="cust_gender" name="cust_gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            
+        </select>
+
+        <label for="cust_occupation">Customer Occupation:</label>
+        <select id="cust_occupation" name="cust_occupation" required>
+            <option value="Manual Labourer">Manual Labourer</option>
+            <option value="Office Worker">Office Worker</option>
+	        <option value="Self-employed">Self-employed</option>
+            <option value="Un-employed">Un-employed</option>
+		</select>
+
+        <!-- Health and Medical History -->
+        <label for="cust_cholesterol_level">Cholesterol Level:</label>
+        <input type="number" id="cust_cholesterol_level" name="cust_cholesterol_level" required>
+
+
+         <fieldset>
+            <legend>Major Disease History:</legend>
+            <div class="checkbox-group">
+                <label for="heart_disease" style="color: rgb(44, 42, 42);">
+                    <input type="checkbox" id="disease" name="disease" value="Heart disease">
+                    Heart disease history
+                </label>
+                <label for="other_major_disease" style="color: rgb(44, 42, 42);">
+                    <input type="checkbox" id="disease" name="disease" value="Other major disease">
+                    Other major disease history
+                </label>
+               </div>
+        </fieldset>
+        <label for="cust_average_glucose_level">Average Glucose Level:</label>
+        <input type="number" id="cust_average_glucose_level" name="cust_average_glucose_level" required>
+
+        <label for="cust_height">Height (cm):</label>
+        <input type="number" id="cust_height" name="cust_height" required>
+
+	<label for="cust_weight">Weight (kg):</label>
+        <input type="number" id="cust_weight" name="cust_weight" required>
+
+
+
+        <label for="cust_average_medExp">Average Medical Expences:</label>
+        <input type="number" id="cust_average_medExp" name="cust_average_medExp" required>
+
+        <label for="patient_location">Location:</label>
+        <select id="patient_location" name="patient_location" required>
+            <option value="Rural">Rural</option>
+            <option value="Sub-Urban">Sub-Urban</option>
+            <option value="Urban">Urban</option>
+        </select>
+
+
+        <label for="patient_participates_in_adventure_sports">Participates in Adventure Sports:</label>
+        <select id="patient_participates_in_adventure_sports" name="patient_participates_in_adventure_sports" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+
+        
+
+        <input class="btn" type="submit">
+    </form>
+
+</div>
+</body>
+</html>

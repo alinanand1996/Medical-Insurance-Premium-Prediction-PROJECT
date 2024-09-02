@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/resultstyle.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <img src="/static/insure.png">
+       <!-- <a href="index.html"><img src="/static/home.png" style="width: 60px; height: 60px;" ></a> -->
+
+        <h2 style="color: antiquewhite;">Health Insurance Premium Prediction</h2>
+
+
+    </div>
+
+    <div class="container" style="width: 900px;">
+        <h2 >Insurance premium details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer details</th>
+                <th>values</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>Customer name</td>
+                <td>{{ cnam }}</td>
+            </tr>
+            <tr>
+                
+                <td>Customer age</td>
+                <td>{{ cage }}</td>
+            </tr>
+            <tr>
+                
+                <td>Gender</td>
+                <td>{{ gender }}</td>
+            </tr>
+            <tr>
+                
+                <td>Occupation</td>
+                <td>{{ cjob }}</td>
+            </tr>
+        
+            <tr>
+                
+                <td>Cholesterol Level</td>
+                <td>{{ cholestrol }}</td>
+            </tr>
+            <tr>
+           
+            <tr>
+                
+                <td>Major Disease History</td>
+                <td>{{ disease }}</td>
+            </tr>
+            <tr>
+                
+                <td>Average Glucose Level</td>
+                <td>{{ glucose_level }}</td>
+            </tr>
+            <tr>
+               
+                <td>Boady Mass INdex (BMI)</td>
+                <td>{{ bmi }}</td>
+            </tr>
+            
+            <tr>
+                
+                <td>Location</td>
+                <td>{{ loc }}</td>
+            </tr>
+            <tr>
+                
+                <td>Average medical expences</td>
+                <td>{{ medExp }}</td>
+            </tr>
+            <tr>
+                
+                <td>Participates in Adventure Sports</td>
+                <td>{{ sports }}</td>
+            </tr>
+            <tr>
+                
+                <td style="font-weight: 300; font-size: large;">Total Premium Amount</td>
+                <td style="font-weight: 300; font-size: large;">{{ pred }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
